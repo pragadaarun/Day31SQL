@@ -1,0 +1,51 @@
+Address Book Service  
+
+UC1:
+> create database AddressBook;
+> use AddressBook;
+
+
+UC2:
+> create table Address_Book_Table (First_Name varchar(10),Last_Name varchar(10),Address varchar(100),City varchar(15),State varchar   (20),Zip int(10),Phone_Number int(15),Email varchar(20));
+
+
+UC3:
+> select * from Address_Book_Table;
+> insert into Address_Book_Table value('Arun','Pragada','Narendrapuram','Rajanaragam','AndhraPradesh','533294','916039','arun@gmail.com');
+> insert into Address_Book_Table value('Bhaskar','Navvuluri','King colony','Nellore','AndhraPradesh','533954','999455','bhaskar@gmail.com');
+> insert into Address_Book_Table value('Kiran','Pedapati','Narendrannagar','EastGodavari','AndhraPradesh','533924','988581','patil4@gmail.com');
+
+UC4:
+> update Address_Book_Table set City ='Rajahmundry' where first_Name = 'Arun';
+
+UC5:
+> delete from Address_Book_Table where First_Name ='Kiran';
+
+UC6:
+> select * from Address_Book_Table where City = 'Nellore' or State = 'AndhraPradesh'; 
+
+UC7:
+> select COUNT(*) from Address_Book_Table where City ='Nellore' and State = 'AndhraPradesh';
+
+UC8: 
+> select * from Address_Book_Table  WHERE City = 'Rajahmundry' ORDER BY First_Name ASC; 
+
+
+UC9:
+> alter table Address_Book_Table ADD COLUMN Type varchar(15) AFTER Email;
+> update Address_book_table set type ='family'where First_Name = 'Arun';
+> update Address_book_table set type ='family'where First_Name = 'Bhaskar';
+> update Address_book_table set type ='friend'where First_Name = 'Pravin';
+> update Address_book_table set type ='family'where First_Name = 'Vinay';
+> update Address_book_table set type ='friend'where First_Name = 'Kiran';
+
+
+
+UC10:
+> select count(*) from Address_Book_Table where Type ='family';
+
+
+UC11:
+> update Address_book_table set Type = 'Family/friend' where First_Name ='Arun'; 
+
+
